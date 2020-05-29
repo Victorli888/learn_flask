@@ -15,9 +15,9 @@ def hello_name(name):
 
 
 # URL for a different route
-@app.route('/ey')
-def eylmao():
-    return "eylmao"
+@app.route('/')
+def frontpage():
+    return "This is the front page"
 
 
 # URL route for finding the factors of a number using a previously defined method
@@ -26,8 +26,8 @@ def factors_route(num):
     return f"The factors for {num} are {factors(num)}"
 
 
-# using a function to write /factors/<int:num> app
-@app.route('/brute_factor/<int:num>')
+# using a function to write html for factors of an integer
+@app.route('/brute_factor/<int:n>')
 def factors_display_raw_html(n):
     factors_list = factors(int(n))
     html = f"<h1> The factors of {n} are </h1> \n <ul>"
